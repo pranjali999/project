@@ -1,3 +1,10 @@
+from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_mysqldb import MySQL
+from config import Config
+app = Flask(__name__)
+
+app.config.from_object(Config)
+mysql = MySQL(app)
 class Employee:
     def __init__(self, employee_id, name, position, salary, contact_info):
         self.employee_id = employee_id
